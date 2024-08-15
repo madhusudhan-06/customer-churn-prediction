@@ -1,0 +1,241 @@
+<html>
+    <head>
+        <style>
+            .cont{
+                text-align: left;
+                align-items: left;
+                font-size: 20px;
+                width:500px;
+                background-color:white;
+                border:2px solid black;
+            }
+            
+            select,input[type="text"]{
+                border: solid 1px black;
+                height: 25px;
+                width: 150px;
+                margin-bottom: 14px;
+                background-color:#DDDDDD;
+                box-shadow:5px 5px 5px #DDDDDD;
+            }
+            input[type="submit"]{
+                background-color:#76BED0;
+                height: 50px;
+                width: 140px;
+                font-size: 30px;
+                border-radius:5px;
+                cursor:pointer;
+                font-family: Georgia, serif;
+            }
+            body{
+                background-color:#7B9EA8;
+                
+                font-family: Georgia, serif;
+            }
+            form{
+                height:auto;
+                background-color:white;
+               
+                padding:20px;
+                
+            }
+            .cont1{
+                text-align:center;
+                background-color:white;
+                width:auto;
+                padding:0px;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div class="cont">
+            <div class="cont1">
+                <h1>Predict !</h1>
+            </div>
+            <hr>
+        <form action='/predict' method="POST">
+            
+  <!--SeniorCitizen: <input type='text' name='SeniorCitizen'><br>-->
+  <label for="SeniorCitizen">SeniorCitizen:</label>
+  <select name='SeniorCitizen'>
+    <option value='1'>Yes</option>
+    <option value='0'>No</option>
+</select><br>
+
+  Tenure: <input type='text' name='tenure'><br>
+
+  MonthlyCharges: <input type='text' name='MonthlyCharges'><br>
+
+  TotalCharges: <input type='text' name='TotalCharges'><br>
+  
+  <!-- gender_Male: <input type='text' name='gender_Male'><br> -->
+  <!--gender: <input type='text' name='gender'><br> M/F-->
+  <label for="gender">Gender:</label>
+  <select name='gender'>
+    <option value='f'>Female</option>
+    <option value='m'>Male</option>
+</select><br>
+
+
+  <!--  Partner_Yes: <input type='text' name='Partner_Yes'><br> -->
+  <!--Partner: <input type='text' name='Partner'><br> Yes/No-->
+  <label for="Partner">Partner:</label>
+  <select name='Partner'>
+    <option value='yes'>Yes</option>
+    <option value='no'>No</option>
+</select><br>
+
+
+  <!--  Dependents_Yes: <input type='text' name='Dependents_Yes'><br> -->
+  <!-- Dependents: <input type='text' name='Dependents'><br>  Yes/No-->
+  <label for="Dependents">Dependents:</label>
+  <select name='Dependents'>
+    <option value='yes'>Yes</option>
+    <option value='no'>No</option>
+</select><br>
+
+  <!--  PhoneService_Yes: <input type='text' name='PhoneService_Yes'><br> -->
+   <!-- PhoneService: <input type='text' name='PhoneService'><br> Yes/No-->
+  <label for="PhoneService">Phone Service:</label>
+  <select name='PhoneService'>
+    <option value='yes'>Yes</option>
+    <option value='no'>No</option>
+</select><br>
+
+
+  <!--  MultipleLines_Nophoneservice: <input type='text' name='MultipleLines_No phone service'><br>
+  MultipleLines_Yes: <input type='text' name='MultipleLines_Yes'><br> -->
+ <!--  MultipleLines: <input type='text' name='MultipleLines'><br>   Yes/No phone service-->
+  <label for="MultipleLines">Multiple Lines:</label>
+  <select name='MultipleLines'>
+    <option value='yes'>Yes</option>
+    <option value='no'>No</option>
+    <option value='no phone service'>No phone Service</option>
+</select><br>
+
+
+
+  <!--  InternetService_Fiberoptic: <input type='text' name='InternetService_Fiber optic'><br>
+  InternetService_No: <input type='text' name='InternetService_No'><br> -->
+  <!--InternetService: <input type='text' name='InternetService'><br>   Fiber optic/No-->
+  <label for="InternetService">Internet Service:</label>
+  <select name='InternetService'>
+    <option value='no'>No</option>
+    <option value='fiber optic'>Fiber optic</option>
+    <option value='dsl'>DSL</option>
+</select><br>
+
+
+
+  <!--  OnlineSecurity_Nointernetservice: <input type='text' name='OnlineSecurity_No internet service'><br>
+  OnlineSecurity_Yes: <input type='text' name='OnlineSecurity_Yes'><br> -->
+  <!-- OnlineSecurity: <input type='text' name='OnlineSecurity'><br> No internet service/Yes-->
+  <label for="OnlineSecurity">Online Security:</label>
+  <select name='OnlineSecurity'>
+    <option value='yes'>Yes</option>
+    <option value='no'>No</option>
+    <option value='no internet service'>No internet Service</option>
+</select><br>
+
+
+
+  <!--  OnlineBackup_Nointernetservice: <input type='text' name='OnlineBackup_No internet service'><br>
+  OnlineBackup_Yes: <input type='text' name='OnlineBackup_Yes'><br> -->
+  <!-- OnlineBackup: <input type='text' name='OnlineBackup'><br>  No internet service/Yes-->
+  <!-- OnlineBackup: <input type='text' name='OnlineBackup'><br> No internet service/Yes-->
+  <label for="OnlineBackup">Online Backup:</label>
+  <select name='OnlineBackup'>
+    <option value='yes'>Yes</option>
+    <option value='no'>No</option>
+    <option value='no internet service'>No internet Service</option>
+</select><br>
+
+
+  <!--  DeviceProtection_Nointernetservice: <input type='text' name='DeviceProtection_No internet service'><br>
+  DeviceProtection_Yes: <input type='text' name='DeviceProtection_Yes'><br> -->
+   <!-- DeviceProtection: <input type='text' name='DeviceProtection'><br>  No internet service/Yes-->
+  <label for="DeviceProtection">Device Protection:</label>
+  <select name='DeviceProtection'>
+    <option value='yes'>Yes</option>
+    <option value='no'>No</option>
+    <option value='no internet service'>No internet Service</option>
+</select><br>
+
+
+  <!--  TechSupport_Nointernetservice: <input type='text' name='TechSupport_No internet service'><br>
+  TechSupport_Yes: <input type='text' name='TechSupport_Yes'><br> -->
+   <!--TechSupport: <input type='text' name='TechSupport'><br>  No internet service/Yes-->
+  <label for="TechSupport">Tech Support:</label>
+  <select name='TechSupport'>
+    <option value='yes'>Yes</option>
+    <option value='no'>No</option>
+    <option value='no internet service'>No internet Service</option>
+</select><br>
+
+
+  <!--  StreamingTV_Nointernetservice: <input type='text' name='StreamingTV_No internet service'><br>
+  StreamingTV_Yes: <input type='text' name='StreamingTV_Yes'><br> -->
+    <!-- StreamingTV: <input type='text' name='StreamingTV'><br>No internet service/Yes-->
+  <label for="StreamingTV">Streaming TV:</label>
+  <select name='StreamingTV'>
+    <option value='yes'>Yes</option>
+    <option value='no'>No</option>
+    <option value='no internet service'>No internet Service</option>
+</select><br>
+
+
+  <!--  StreamingMovies_Nointernetservice: <input type='text' name='StreamingMovies_No internet service'><br>
+  StreamingMovies_Yes: <input type='text' name='StreamingMovies_Yes'><br> -->
+  <!-- StreamingMovies: <input type='text' name='StreamingMovies'>  No internet service/Yes-->
+  <label for="StreamingMovies">Streaming Movies:</label>
+  <select name='StreamingMovies'>
+    <option value='yes'>Yes</option>
+    <option value='no'>No</option>
+    <option value='no internet service'>No internet Service</option>
+</select><br>
+
+
+  <!--  Contract_Oneyear: <input type='text' name='Contract_One year'><br>
+  Contract_Twoyear: <input type='text' name='Contract_Two year'><br> -->
+  <!-- Contract: <input type='text' name='Contract'><br>  One year / Two year-->
+  <label for="Contract">Contract:</label>
+  <select name='Contract'>
+    <option value='one year'>One year</option>
+    <option value='two year'>Two year</option>
+    <option value='month to month'>Month to Month</option>
+</select><br>
+
+
+  <!--  PaperlessBilling_Yes: <input type='text' name='PaperlessBilling_Yes'><br> -->
+  <!--PaperlessBilling: <input type='text' name='PaperlessBilling'><br>   Yes-->
+  <label for="PaperlessBilling"> Paperless Billing:</label>
+  <select name='PaperlessBilling'>
+    <option value='no'>No</option>
+    <option value='yes'>Yes</option>
+</select><br>
+
+  <!--  PaymentMethod_Creditcard: <input type='text' name='PaymentMethod_Credit card (automatic)'><br>
+  PaymentMethod_Electroniccheck: <input type='text' name='PaymentMethod_Electronic check'><br>
+  PaymentMethod_Mailedcheck: <input type='text' name='PaymentMethod_Mailed check'><br>-->
+    <!--PaymentMethod: <input type='text' name='PaymentMethod'><br> Credit card / Electronic check / Mailedcheck-->
+  <label for="PaymentMethod">Payment Method:</label>
+  <select name='PaymentMethod'>
+    <option value='credit card'>Credit card </option>
+    <option value='electronic check'>Electronic check</option>
+    <option value='mailed check'>Mailed check</option>
+    <option value='bank transfer'>Bank Transfer</option>
+</select><br>
+
+
+<br><br>
+
+            Prediction: {{ans}} <br><br><hr>
+            <input type='submit' value='Predict'>
+  
+        </form>
+    </div>
+</center>
+    </body>
+</html>
+
